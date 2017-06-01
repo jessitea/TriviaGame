@@ -1,0 +1,71 @@
+body {
+
+	background-image: url('../images/wood.jpg');
+	background-repeat: repeat;
+	background-attachment: none;
+
+}
+
+
+div.gamearea {
+	
+	background-image: url('../images/hamburger-background.png');
+	background-repeat: no-repeat;
+	background-attachment: none;
+	background-position: center;
+	background-size: 100%;
+	margin: 0 auto;
+	min-height: 700px;
+	
+
+}
+
+div.questionarea {
+
+	position: center;
+	margin-left: 10%;
+    margin-top: 18%;
+	background-color: white;
+	border-radius: 15px;
+	height: 40%;
+	width: 65%;
+	padding: 50px;
+	text-align: center;
+	border-style: solid;
+	border-color: black;
+	border-width: 1px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 18px;
+
+}
+
+h1 {
+
+	font-family: 'Waiting for the Sunrise', cursive;
+	font-size: 30px;
+	font-weight: bold;
+}
+
+#titleimage {
+
+	padding: 10px;
+	width: 80%;
+}
+
+div.wrong:hover {
+
+	background-color: rgba(0, 0, 0, 0.6);
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	color: white;
+}
+
+div.correct:hover {
+
+	background-color: rgba(0, 0, 0, 0.6);
+	border-style: solid;
+	border-width: 1px;
+	border-color: black;
+	color: white;
+}
