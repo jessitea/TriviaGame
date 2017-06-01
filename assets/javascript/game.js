@@ -103,7 +103,7 @@ var questions = [
 
 ]
 
-
+// Array of objects for correct answer images and titles
 var imageAnswer = [
 
 	{
@@ -211,12 +211,14 @@ function decrement() {
 
 }
 
+// Function to show a new question and reset timer, also adds to count
 function newQuestion() {
 
 		questionTimer = 21;
 
 		count++;
 
+	// if statement to continue this part of function for the length of the array (matches index with length)
 	if (count <= questions.length - 1) {
 
 		displayQuestion();
@@ -226,6 +228,7 @@ function newQuestion() {
 		answer();
 	}
 
+	// else statement to display stats of game after the questions run out
 	else {
 
 		$('div.questionarea').html("<p>Great job!</p>");
@@ -234,12 +237,14 @@ function newQuestion() {
 		$('div.questionarea').append("<p>You got " + wrongAnswerCount + " questions incorrect!</p>");
 	}
 
-		console.log(count);
-		console.log(questions.length);
+		// For testing purposes
+		// console.log('Count: ' + count);
+		// console.log('Questions length: ' + questions.length);
 
 
 }
 
+// function to add keep track of user's correct/wrong answers
 function answer() {
 
 	$('div.correct').click(function() {
@@ -274,16 +279,12 @@ function answer() {
 
 }
 
+// Function to display image for the correct answer (with corresponding title)
 function displayAnswer() {
 
 		$('div.questionarea').append('<p><img src="' + imageAnswer[count].url + '" height="200" alt="answerpic"></p>');
 		$('div.questionarea').append('<p>The correct answer is: ' + imageAnswer[count].title + '</p>');
 
-	
-
-
 }
 
-
-// function timeUp()
 
