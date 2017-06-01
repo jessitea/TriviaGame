@@ -217,11 +217,25 @@ function newQuestion() {
 
 		count++;
 
+	if (count <= questions.length - 1) {
+
 		displayQuestion();
 
 		timer();
 
 		answer();
+	}
+
+	else {
+
+		$('div.questionarea').html("<p>Great job!</p>");
+		$('div.questionarea').append('<p><img src="assets/images/nohface.gif" width="350" alt="nohface"></p>');
+		$('div.questionarea').append("<p>You got " + correctAnswerCount + " questions correct!</p>");
+		$('div.questionarea').append("<p>You got " + wrongAnswerCount + " questions incorrect!</p>");
+	}
+
+		console.log(count);
+		console.log(questions.length);
 
 
 }
@@ -235,11 +249,11 @@ function answer() {
 
 		clearInterval(timerId);
 
-		questionTimer = 5;
-
-		timer();
-
 		correctAnswerCount++;
+
+		setTimeout(newQuestion, 3000);
+
+
 
 
 
@@ -252,11 +266,9 @@ function answer() {
 
 		clearInterval(timerId);
 
-		questionTimer = 5;
-
-		timer();
-
 		wrongAnswerCount++;
+
+		setTimeout(newQuestion, 3000);
 
 	})
 
@@ -266,6 +278,8 @@ function displayAnswer() {
 
 		$('div.questionarea').append('<p><img src="' + imageAnswer[count].url + '" height="200" alt="answerpic"></p>');
 		$('div.questionarea').append('<p>The correct answer is: ' + imageAnswer[count].title + '</p>');
+
+	
 
 
 }
