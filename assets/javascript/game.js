@@ -1,14 +1,19 @@
 //Declaring global variables
+
+    //variables to keep track of wrong/right questions
 var correctAnswerCount = 0;
 var wrongAnswerCount = 0;
 
+	//variable with value of start of timer
 var questionTimer = 21;
 
+	
 var showQuestion;
 
 
 var timerId;
 
+	//variable for index
 var count = -1;
 
 // Array of objects for Q&A
@@ -158,9 +163,21 @@ var imageAnswer = [
 
 ]
 
-// Starts game after pressing 'Start Button' on title page
-$('.start').click(startGame);
+function begin() {
 
+	count = -1;
+
+	// Start screen display
+	$('div.questionarea').html('<h1>Food Trivia Game!</h1>');
+	$('div.questionarea').append('<img id="titleimage" src="assets/images/title-image.png" alt="food"><br>');
+	$('div.questionarea').append('<button type="button" class="btn btn-success start">Start</button>');
+
+	// Starts game after pressing 'Start Button' on title page
+	$('.start').click(startGame);
+
+}
+
+begin();
 
 // Function to start game
 function startGame() {
@@ -235,6 +252,10 @@ function newQuestion() {
 		$('div.questionarea').append('<p><img src="assets/images/nohface.gif" width="350" alt="nohface"></p>');
 		$('div.questionarea').append("<p>You got " + correctAnswerCount + " questions correct!</p>");
 		$('div.questionarea').append("<p>You got " + wrongAnswerCount + " questions incorrect!</p>");
+		$('div.questionarea').append('<button type="button" class="btn btn-success restart">Play Again</button>');
+
+
+		$('.restart').click(begin);
 	}
 
 		// For testing purposes
