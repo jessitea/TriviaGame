@@ -4,6 +4,8 @@
 var correctAnswerCount = 0;
 var wrongAnswerCount = 0;
 
+var uansweredCount = 0;
+
 	//variable with value of start of timer
 var questionTimer = 21;
 
@@ -171,6 +173,8 @@ function begin() {
 
 	wrongAnswerCount = 0;
 
+	uansweredCount = 0;
+
 	// Start screen display
 	$('div.questionarea').html('<h1>Food Trivia Game!</h1>');
 	$('div.questionarea').append('<img id="titleimage" src="assets/images/title-image.png" alt="food"><br>');
@@ -220,7 +224,7 @@ function decrement() {
       // If runs out of time, alerts user and moves to new question
       if (questionTimer === 0) {
 
-      	wrongAnswerCount++;
+      	uansweredCount++;
 
       	$('div.questionarea').html("Time's Up!");
 
@@ -258,6 +262,7 @@ function newQuestion() {
 		$('div.questionarea').append('<p><img src="assets/images/nohface.gif" width="350" alt="nohface"></p>');
 		$('div.questionarea').append("<p>You got " + correctAnswerCount + " questions correct!</p>");
 		$('div.questionarea').append("<p>You got " + wrongAnswerCount + " questions incorrect!</p>");
+		$('div.questionarea').append("<p>You left " + uansweredCount + " questions unanswered!</p>");
 		$('div.questionarea').append('<button type="button" class="btn btn-success restart">Play Again</button>');
 
 
