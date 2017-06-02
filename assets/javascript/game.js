@@ -167,6 +167,10 @@ function begin() {
 
 	count = -1;
 
+	correctAnswerCount = 0;
+
+	wrongAnswerCount = 0;
+
 	// Start screen display
 	$('div.questionarea').html('<h1>Food Trivia Game!</h1>');
 	$('div.questionarea').append('<img id="titleimage" src="assets/images/title-image.png" alt="food"><br>');
