@@ -216,6 +216,8 @@ function decrement() {
       // If runs out of time, alerts user and moves to new question
       if (questionTimer === 0) {
 
+      	wrongAnswerCount++;
+
       	$('div.questionarea').html("Time's Up!");
 
       	displayAnswer();
